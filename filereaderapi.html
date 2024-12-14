@@ -1,0 +1,68 @@
+<!-- 
+<!DOCTYPE html>
+   <head>
+    <title>File Reader Api</title>
+    <link rel="styelsheet" href="style.css"> 
+     <style>
+        img{
+            width:500px;
+        }
+     </style>
+   </head>
+   <body>
+      <input type="file" accept="image/*">
+      <div class="content"></div> -->
+      <!-- <pre class="content"></pre> FILE UPLOAD>
+       <img class="content" alt="">
+         <script src="index.js"></script>
+       <script> //FILE READER API:
+  let fileInput=document.querySelector("input");
+  let outputFile=document.querySelector(".content");
+      
+
+  fileInput.addEventListener("change", ()=>{
+    //    console.dir(fileInput)
+        let file=fileInput.files[0]
+        let fr=new FileReader();//file reader method
+        fr.readAsDataURL(file);//user file text file/url image
+        fr.addEventListener('load',()=>{
+                         //textContent.innerHTML,textHTML(file reader  (object)lo  property result )
+            outputFile.src=fr.result;
+
+        })
+
+  });
+</script> 
+   </body>
+</html>  -->
+<!DOCTYPE html>
+   <head>
+     <title>
+        file Reader
+     </title>
+     <style>
+
+     </style>
+   </head>
+      <body>
+        <input type="file" accept="text/*">
+        <pre class="content"></pre>
+         <!-- //show file format -->
+
+        <script>
+            let fileInput=document.querySelector("input");
+            let outputFile=document.querySelector(".content")
+      
+            fileInput.addEventListener("change", ()=>{
+     // console.dir(inputFile)
+    
+          let file=fileInput.files[0];
+                let fr = new FileReader();
+                fr.readAsText(file);
+                fr.addEventListener("load",()=>{
+                  outputFile.textContent=fr.result;
+            })
+               })
+        </script>
+      </body>
+ </html>
